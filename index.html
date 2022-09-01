@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ************************************* Bootstrap CDN ********************************************* -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- ************************************** external CSS ********************************************* -->
+    <link rel="stylesheet" href="index.css"/>
+    <!-- ************************************** Font Awesome ********************************************* -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <!-- ***************************************login popup********************************************* -->
+    <div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- ********************************** Login Header ******************************************* -->
+        <div class="modal-header border-0">
+          <h5 class="modal-title h2 ms-3" id="staticBackdropLabel" style="font-weight: bold; color:#192F60;">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- ********************************** Login Body ******************************************* -->
+        <div class="modal-body d-flex flex-column">
+            <div class="container d-flex flex-column px-3">    
+                <button class="btn border">
+                    <img src="gmail.png" class="img-fluid mail"/>
+                    Continue with Gmail
+                </button>
+                <button class="btn mt-3 mb-5 border">
+                    <img src="facebook.png" class="img-fluid mail"/>
+                    Continue with Facebook
+                </button>
+            </div>  
+        </div>
+        <!-- ********************************** Login Footer ******************************************* -->
+        <div class="modal-footer mx-5">
+          <p data-bs-dismiss="modal" class="signupLink">
+            <span style="color:#192F60;">Don’t have account?</span><span style="color:#ED5A6B;">Sign UP</span> 
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- **************************************sign in popup******************************************** -->
+    <div class="modal fade" id="signup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- ********************************** SignUp Header ******************************************* -->
+            <div class="modal-header border-0">
+              <h5 class="modal-title h2 ms-3" id="staticBackdropLabel" style="font-weight: bold; color:#192F60;">Sign Up</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- *********************************** SignUp Body ******************************************** -->
+            <div class="modal-body d-flex flex-column">
+                <div class="container d-flex flex-column px-3">    
+                    <button class="btn border">
+                        <img src="gmail.png" class="img-fluid mail"/>
+                        Continue with Gmail
+                    </button>
+                    <button class="btn mt-3 mb-5 border">
+                        <img src="facebook.png" class="img-fluid mail"/>
+                        Continue with Facebook
+                    </button>
+                </div>  
+            </div>
+            <!-- *********************************** SignUp Footer ******************************************** -->
+            <div class="modal-footer mx-5">
+              <p data-bs-dismiss="modal" class="signupLink">
+                <span style="color:#192F60;">Already have an account? </span><span style="color:#ED5A6B;">Login</span> 
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
+    <!--************************************** header contents *********************************************-->
+    <header class="container-fluid background">
+        <div class="container-lg header-container">
+            <!-- **************************** Login and SignUp Buttons *************************************-->
+            <two_buttons class="row cutton-container">
+                <!-- ******************************* Login Button *************************************-->
+                <button class="col-lg-1 col-md-1 col-sm-2 col-2 btn text-white border-0 me-1 login-btn" data-bs-toggle="modal" data-bs-target="#login">Login</button>
+                <!-- ******************************* SignUp Button *************************************-->
+                <button class="col-lg-2 col-md-3 col-sm-4 col-6 btn border create-btn text-light" data-bs-toggle="modal" data-bs-target="#signup">Create an account</button>
+            </two_buttons>
+            <!-- ******************************* Edureka Logo *************************************-->
+            <edureka-logo class="d-flex justify-content-center mt-lg-4 mt-2 mt-sm-4 mt-md-4">
+                <div class="edureka-logo display-4 fw-bold bg-white d-flex">
+                    e!
+                </div>
+            </edureka-logo>
+            <!-- ******************************* Header title *************************************-->
+            <header-text class="d-flex justify-content-center mt-4">
+                <p class="text-white h1 text-center border-1">Find the best restaurants, cafés, and bars</p>
+            </header-text>
+            <!-- ***************************** Location and restaurant Search *************************************-->
+            <location class="row justify-content-center ">
+                <!-- ************************************ location *************************************** -->
+                <div class=" col-lg-3 col-md-4 col-sm-10 col-xs-12 col-12 row p-0 m-0  mt-4 position-relative" data-bs-toggle="collapse" data-bs-target="#guwahati-suggestions" aria-controls="collapseExample">
+                    <div class="col-12 m-0 p-0">
+                         <!--************************************ location Input *************************************** -->
+                        <input type="text" placeholder="Please type a location" class="form-control list-group-flush p-2" id="location-input"/>
+                         <!--************************************ location Suggestions *************************************** -->
+                        <div class="  border shadow position-absolute mb-0 guwahati-suggestions collapse" style="z-index:3;" id="guwahati-suggestions" >
+                            <p class="select-item mb-0 px-3 py-2" onclick="Location('Sarjapur Road, Bengaluru')" >Sarjapur Road, Bengaluru</p>
+                            <p class="select-item mb-0 px-3 py-2" onclick="Location('HSR Layout, Bengaluru')" >HSR Layout, Bengaluru</p>
+                            <p class="select-item mb-0 px-3 py-2" onclick="Location('Kormangala, Bengaluru')"  >Kormangala, Bengaluru</p>
+                            <p class="select-item mb-0 px-3 py-2" onclick="Location('Jay Nagar, Bengaluru')"  >Jay Nagar, Bengaluru</p>
+                        </div>
+                    </div>
+                    
+                </div> 
+                
+                <!-- ************************************ restaurant  *************************************** -->
+                <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 col-12 row p-0 m-0 mt-4 position-relative ms-lg-2 ms-md-2 restaurant mb-5">
+                    <div class="col-12 m-0 p-0 " data-bs-toggle="collapse" data-bs-target="#restaurant-suggestions" aria-controls="collapseExample">
+                        <!-- ************************************ restaurant Input *************************************** -->
+                        <div class="input-group restaurant  p-0 m-0 mb-2">
+                            <span class="input-group-text list-group-flush bg-white "><i class="fa fa-search restaurant-suggestions p-0 m-0" aria-hidden="true"></i></span>
+                            <input type="text" placeholder="Search for restaurants" class="form-control list-group-flush border-0 p-2" style="z-index:2; height: 42px;" id="restaurant-input"/>
+                        </div>
+                        <!-- ************************************ restaurant suggestions *************************************** -->
+                        <div class=" bg-white border shadow position-absolute restaurant-suggestions collapse" id="restaurant-suggestions">
+                            <!-- ************************************ restaurant suggestion 1 *************************************** -->
+                            <div class="select-item card row px-2 m-0 py-2 flex-row align-items-center border-0 border-bottom list-group-flush" onclick="Location2('The big chill cakery')" >
+                                <div class="col-2">
+                                    <img src="img1.jpg" alt="img" class="search-image"/>
+                                </div>
+                                <div class="col-9 card-body m-0 p-0">
+                                    <div class="card-title m-0 p-0 suggestion-title">The Big Chill Cakery</div>
+                                    <div class="card-text m-0 p-0 suggestion-text">Sarjapur Road, Bengaluru</div>
+                                </div>
+                            </div>
+                            <!-- ************************************ restaurant suggestion 2 *************************************** -->
+                            <div class="select-item card row px-2 m-0 py-2 flex-row align-items-center border-0 border-bottom list-group-flush" onclick="Location2('The big chill cakery')">
+                                <div class="col-2">
+                                    <img src="img1.jpg" alt="img" class="search-image"/>
+                                </div>
+                                <div class="col-9 card-body m-0 p-0">
+                                    <div class="card-title m-0 p-0 suggestion-title">The Big Chill Cakery</div>
+                                    <div class="card-text m-0 p-0 suggestion-text">Sarjapur Road, Bengaluru</div>
+                                </div>
+                            </div>
+                            <!-- ************************************ restaurant suggestion 3 *************************************** -->
+                            <div class="select-item card row px-2 m-0 py-3 flex-row align-items-center border-0 border-bottom list-group-flush" onclick="Location2('The big chill cakery')">
+                                <div class="col-2">
+                                    <img src="img1.jpg" alt="img" class="search-image"/>
+                                </div>
+                                <div class="col-9 card-body m-0 p-0">
+                                    <div class="card-title m-0 p-0 suggestion-title">The Big Chill Cakery</div>
+                                    <div class="card-text m-0 p-0 suggestion-text">Sarjapur Road, Bengaluru</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </location>
+        </div>
+    </header>
+    <!-- ************************************** Quick Searches ********************************************* -->
+    <div class="container-lg my-5">
+        <!-- ************************************ Quick Searches heading *************************************** -->
+        <p class="fw-bold fa-2x QS">Quick Searches</p>
+        <!-- ************************************ Quick Searches text *************************************** -->
+        <p class=" fw-bold QS-text">Discover restaurants by type of meal</p>
+        <!-- ************************************ Quick Searches Items *************************************** -->
+        <div class="row">
+            <!-- ************************************ Breakfast *************************************** -->
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 pe-3 m-0 mb-3">
+                <div class="card p-0 m-0 row list-group-flush flex-row border-0 shadow item">
+                    <!-- ************************************ breakfast image *************************************** -->
+                    <div class="col-5 p-0 m-0">
+                        <img src="img1.jpg" class="img-fluid"/>
+                    </div>
+                    <!-- ************************************ breakfast text *************************************** -->
+                    <div class="col-7 body px-3   py-2 ">
+                        <p class="card-title breakfast-title h5">Breakfast</p>
+                        <p class="card-text breakfast-text">Start your day with exclusive breakfast options</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ************************************ Lunch *************************************** -->
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 pe-3 m-0 mb-3">
+                <div class="card p-0 m-0 row list-group-flush flex-row border-0 shadow item">
+                    <!-- ************************************ Lunch image *************************************** -->
+                    <div class="col-5 p-0 m-0">
+                        <img src="img2.jpg" class="img-fluid"/>
+                    </div>
+                    <!-- ************************************ Lunch text *************************************** -->
+                    <div class="col-7 body px-3   py-2 ">
+                        <p class="card-title breakfast-title h5">Lunch</p>
+                        <p class="card-text breakfast-text">Start your day with exclusive breakfast options</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ************************************ Snacks *************************************** -->
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 pe-3 m-0 mb-3">
+                <div class="card p-0 m-0 row list-group-flush flex-row border-0 shadow item">
+                    <!-- ************************************ Snacks image *************************************** -->
+                    <div class="col-5 p-0 m-0">
+                        <img src="img3.jpg" class="img-fluid"/>
+                    </div>
+                    <!-- ************************************ Snacks text *************************************** -->
+                    <div class="col-7 body px-3   py-2 ">
+                        <p class="card-title breakfast-title h5">Lunch</p>
+                        <p class="card-text breakfast-text">Start your day with exclusive breakfast options</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ************************************ Dinner *************************************** -->
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 pe-3 m-0 mb-3">
+                <div class="card p-0 m-0 row list-group-flush flex-row border-0 shadow item">
+                    <!-- ************************************ Dinner image *************************************** -->
+                    <div class="col-5 p-0 m-0">
+                        <img src="img4.jpg" class="img-fluid"/>
+                    </div>
+                    <!-- ************************************ Dinner Text *************************************** -->
+                    <div class="col-7 body px-3   py-2 ">
+                        <p class="card-title breakfast-title h5">Dinner</p>
+                        <p class="card-text breakfast-text">Start your day with exclusive breakfast options</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ************************************ Drinks *************************************** -->
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 pe-3 m-0 mb-3">
+                <div class="card p-0 m-0 row list-group-flush flex-row border-0 shadow item">
+                    <!-- ************************************ Drinks image *************************************** -->
+                    <div class="col-5 p-0 m-0">
+                        <img src="img5.jpg" class="img-fluid"/>
+                    </div>
+                    <!-- ************************************ Drinks Text *************************************** -->
+                    <div class="col-7 body px-3   py-2 ">
+                        <p class="card-title breakfast-title h5">Drinks</p>
+                        <p class="card-text breakfast-text">Start your day with exclusive breakfast options</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ************************************ Night Life *************************************** -->
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 pe-3 m-0 mb-3">
+                <div class="card p-0 m-0 row list-group-flush flex-row border-0 shadow item">
+                    <!-- ************************************ NightLife image *************************************** -->
+                    <div class="col-5 p-0 m-0">
+                        <img src="img6.jpg" class="img-fluid"/>
+                    </div>
+                    <!-- ************************************ NightLife Text *************************************** -->
+                    <div class="col-7 body px-3   py-2 ">
+                        <p class="card-title breakfast-title h5">Nightlife</p>
+                        <p class="card-text breakfast-text">Start your day with exclusive breakfast options</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
